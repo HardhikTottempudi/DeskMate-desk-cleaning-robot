@@ -1,0 +1,14 @@
+# Arduino build outputs
+*.ino.bin
+*.ino.with_bootloader.bin
+*.elf
+*.hex
+*.map
+*.eep
+
+# IDE/system files
+.vscode/
+.idea/
+*.tmp
+.DS_Store
+Thumbs.db
