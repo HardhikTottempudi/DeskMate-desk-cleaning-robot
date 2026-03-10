@@ -1,20 +1,27 @@
-# RoboticArmCar
-ESP8266-powered robotic arm car with a built-in web interface for servo and base movement control.
+# DeskMate (Desk Cleaning Robot)
+DeskMate is an ESP8266-based desk cleaning robot with robotic-arm and mobile base control through a built-in web interface.
 ## Features
-- Creates a Wi-Fi access point and hosts a control webpage
-- Controls 4 servos with on-page sliders
-- Controls base movement with an on-page joystick
-- Exposes HTTP endpoints for movement and servo updates
-## Main File
-- `RoboticArmCar.ino` - complete firmware + embedded web UI
-## Pin Mapping
-- Servo pins: `D1, D2, D5, D6`
-- Motor pins: `D3, D4, D7, D8`
+- Hosts a local Wi-Fi access point for direct phone/laptop control
+- 4-servo robotic arm control with live slider UI
+- Base movement control using joystick-like web controls
+- Lightweight HTTP endpoints for robot actions
+## Hardware Stack
+- ESP8266 microcontroller
+- 4x servo motors (arm)
+- Motor driver + DC motors (base)
+- Chassis + cleaning attachment setup
+## Firmware
+- Main firmware file: `RoboticArmCar.ino`
+## Project Gallery
+![DeskMate View 1](assets/images/deskmate-1.jpg)
+![DeskMate View 2](assets/images/deskmate-2.jpg)
+![DeskMate View 3](assets/images/deskmate-3.jpg)
+![DeskMate View 4](assets/images/deskmate-4.jpg)
 ## Setup
 1. Open `RoboticArmCar.ino` in Arduino IDE.
-2. Set custom AP credentials in `APSSID` and `APPSK`.
-3. Select your ESP8266 board and upload.
-4. Connect to the ESP AP and open the IP shown in serial monitor.
-## Endpoints
-- `/setServo0` to `/setServo3` with query `angle=<0-180>`
+2. Configure AP credentials in `APSSID` and `APPSK`.
+3. Select ESP8266 board and upload firmware.
+4. Connect to the AP and open the IP shown on serial monitor.
+## API Endpoints
+- `/setServo0` to `/setServo3` with `angle=<0-180>`
 - `/forward`, `/backward`, `/left`, `/right`, `/stop`
